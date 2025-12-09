@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartFridge
 {
-    internal class Product
+    public class Product
     {
     }
 }
