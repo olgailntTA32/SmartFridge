@@ -27,5 +27,10 @@ namespace SmartFridge
             _products.Remove(prod);
             return true;
         }
+        public List<Product> GetExpiredProducts()
+        {
+            var now = DateTime.Now;
+            return _products.Where(p => p.ExpirationDate < now).ToList();
+        }
     }
 }
