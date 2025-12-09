@@ -13,5 +13,18 @@ namespace SmartFridge.Tests
             var products = fridge.GetAllProducts();
             Assert.Contains(product, products);
         }
+
+        [Fact]
+        public void RemoveProduct_WhenProductExists_ShouldRemoveSuccessfully()
+        {
+            var fridge = new SmartFridge();
+            var product = new Product("Cheese", DateTime.Now.AddDays(3));
+            fridge.AddProduct(product);
+
+            var result = fridge.RemoveProduct("Cheese");
+
+            Assert.True(result);
+            Assert.DoesNotContain(product, fridge.GetAllProducts());
+        }
     }
 }
