@@ -8,5 +8,13 @@ namespace SmartFridge
 {
     public class Product
     {
+        public string Name { get; }
+        public DateTime ExpirationDate { get; }
+
+        public Product(string name, DateTime expirationDate)
+        {
+            Name = name;
+            ExpirationDate = expirationDate;
+        }
     }
 }
